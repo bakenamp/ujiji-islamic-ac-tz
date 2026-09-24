@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ujiji Islamic SecondarySchool | Official Website</title>
+
+    <meta name="description"
+        content="Official website of TRACDI Primary and Secondary School. Find information about admissions, academics, school news, announcements, downloads and contact information.">
+
+    <link rel="icon" href="images/logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            background: #063b70;
+            color: white;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .top-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
+            min-height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .school-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .school-brand img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .school-name h1 {
+            font-size: 23px;
+            color: #063b70;
+        }
+
+        .school-name p {
+            font-size: 12px;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 13px;
+            color: #222;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #063b70;
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #063b70;
+            color: white;
+            font-size: 25px;
+            padding: 7px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO SLIDER
+        ========================= */
+
+        .hero {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.25));
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 7%;
+            transform: translateY(-50%);
+            color: white;
+            max-width: 650px;
+        }
+
+        .hero-content span {
+            display: inline-block;
+            background: #f5a623;
+            padding: 7px 14px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #f5a623;
+            color: #111;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        .slider-controls {
+            position: absolute;
+            z-index: 5;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .dot.active {
+            opacity: 1;
+            background: #f5a623;
+        }
+
+        /* =========================
+           QUICK LINKS
+        ========================= */
+
+        .quick-links {
+            background: #063b70;
+            color: white;
+        }
+
+        .quick-container {
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .quick-item {
+            padding: 25px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            transition: 0.3s;
+        }
+
+        .quick-item:hover {
+            background: #f5a623;
+            color: #111;
+        }
+
+        .quick-item .icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 70px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #063b70;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background: #f5a623;
+            margin: 12px auto;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about-text h3 {
+            color: #063b70;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           NEWS
+        ========================= */
+
+        .news-section {
+            background: white;
+        }
+
+        .news-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            color: #f5a623;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            color: #063b70;
+            margin: 8px 0;
+            font-size: 19px;
+        }
+
+        .news-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: #063b70;
+            font-weight: bold;
+        }
+
+        /* =========================
+           UPDATES
+        ========================= */
+
+        .updates-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .notice-board,
+        .important-links {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .notice {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
+        }
+
+        .notice:last-child {
+            border-bottom: none;
+        }
+
+        .notice-date {
+            min-width: 55px;
+            height: 55px;
+            background: #063b70;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .notice-date strong {
+            font-size: 20px;
+            display: block;
+        }
+
+        .notice h4 {
+            color: #063b70;
+        }
+
+        .notice p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .important-links h3,
+        .notice-board h3 {
+            color: #063b70;
+            margin-bottom: 15px;
+        }
+
+        .important-links a {
+            display: block;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+
+        .important-links a:hover {
+            color: #063b70;
+            padding-left: 18px;
+        }
+
+        /* =========================
+           ATTACHMENTS
+        ========================= */
+
+        .attachments {
+            background: #eef3f8;
+        }
+
+        .attachment-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .attachment {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .file-icon {
+            font-size: 35px;
+        }
+
+        .attachment h4 {
+            color: #063b70;
+            font-size: 15px;
+        }
+
+        .attachment p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .download {
+            margin-left: auto;
+            color: #063b70;
+            font-size: 20px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 18px;
+        }
+
+        .contact-box {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #063b70;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .contact-box h4 {
+            color: #063b70;
+        }
+
+        .contact-box p {
+            color: #666;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #062c52;
+            color: white;
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
+            padding: 55px 0 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 18px;
+            color: #f5a623;
+        }
+
+        .footer-column p {
+            color: #d4dce5;
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: #d4dce5;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 13px;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 1000px) {
+
+            .school-name h1 {
+                font-size: 19px;
+            }
+
+            nav ul {
+                gap: 0;
+            }
+
+            nav ul li a {
+                padding: 9px 8px;
+                font-size: 13px;
+            }
+
+            .hero {
+                height: 450px;
+            }
+
+            .hero-content h2 {
+                font-size: 38px;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 768px) {
+
+            .top-bar {
+                display: none;
+            }
+
+            .header-container {
+                min-height: 75px;
+            }
+
+            .school-brand img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .school-name h1 {
+                font-size: 16px;
+            }
+
+            .school-name p {
+                font-size: 9px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                display: none;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.show {
+                display: block;
+            }
+
+            nav ul {
+                display: block;
+                padding: 10px 5%;
+            }
+
+            nav ul li a {
+                padding: 12px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content {
+                left: 6%;
+                right: 6%;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .quick-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-container,
+            .updates-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .news-container,
+            .attachment-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+
+        @media(max-width: 480px) {
+
+            .school-brand {
+                gap: 8px;
+            }
+
+            .school-brand img {
+                width: 43px;
+                height: 43px;
+            }
+
+            .school-name h1 {
+                font-size: 13px;
+            }
+
+            .school-name p {
+                display: none;
+            }
+
+            .hero {
+                height: 360px;
+            }
+
+            .hero-content h2 {
+                font-size: 27px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .quick-item {
+                padding: 18px 10px;
+            }
+        }
+    
+        /* =========================
+           SCHOOL-SPECIFIC RESPONSIVE ENHANCEMENTS
+        ========================= */
+        .hero-content .btn {
+            box-shadow: 0 4px 12px rgba(0,0,0,.18);
+        }
+
+        .news-card {
+            min-height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .top-contact {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .hero-content {
+                max-width: 88%;
+            }
+
+            .hero-content span {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .hero-content h2 {
+                line-height: 1.15;
+            }
+
+            .quick-container {
+                width: 100%;
+            }
+
+            .quick-item {
+                min-height: 105px;
+            }
+
+            .about-image img {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                width: 94%;
+            }
+
+            .school-name h1 {
+                max-width: 230px;
+                line-height: 1.15;
+            }
+
+            .hero-content {
+                left: 5%;
+                right: 5%;
+            }
+
+            .hero-content h2 {
+                font-size: 25px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            .hero-content .btn {
+                padding: 10px 17px;
+            }
+
+            .quick-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-item .icon {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+     TOP BAR
+========================= -->
+
+    <div class="top-bar">
+        <div class="top-contact">
+            <span>📞 +255 700 000 000</span>
+            <span>✉️ info@school.ac.tz</span>
+        </div>
+
+        <div class="social-links">
+            <span>Facebook</span>
+            <span>Instagram</span>
+            <span>YouTube</span>
+        </div>
+    </div>
+
+
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="#" class="school-brand">
+
+                <!-- CHANGE LOGO -->
+                <img src="images/logo.png" alt="School Logo">
+
+                <div class="school-name">
+                    <h1>UJIJI ISLAMIC SECONDARY SCHOOL</h1>
+                    <p>QUALITY EDUCATION • DISCIPLINE • EXCELLENCE</p>
+                </div>
+
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <nav id="navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="#home" class="active">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#academics">Academics</a>
+                    </li>
+
+                    <li>
+                        <a href="#admission">Admissions</a>
+                    </li>
+
+                    <li>
+                        <a href="#news">News</a>
+                    </li>
+
+                    <li>
+                        <a href="#downloads">Downloads</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     HERO SLIDER
+========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="slide active">
+
+            <img src="images/banner1.jpg" alt="School Campus">
+
+            <div class="hero-content">
+
+                <span>WELCOME TO OUR SCHOOL</span>
+
+                <h2>Nurturing Young Minds for a Bright Future</h2>
+
+                <p>
+                    Discover quality education, professional training
+                    and opportunities for a better future.
+                </p>
+
+                <a href="#admission" class="btn">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img src="images/banner2.jpg" alt="School Students">
+
+            <div class="hero-content">
+
+                <span>QUALITY SCHOOL EDUCATION</span>
+
+                <h2>Learn Today. Lead Tomorrow.</h2>
+
+                <p>
+                    Our students receive practical and theoretical
+                    knowledge for professional excellence.
+                </p>
+
+                <a href="#academics" class="btn">
+                    Explore Academics
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img src="images/banner3.jpg" alt="School Activities">
+
+            <div class="hero-content">
+
+                <span>SCHOOL LIFE</span>
+
+                <h2>Learning Beyond the Classroom</h2>
+
+                <p>
+                    Participate in academic, social and professional
+                    development activities.
+                </p>
+
+                <a href="#news" class="btn">
+                    Latest Updates
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="slider-controls">
+
+            <span class="dot active" onclick="showSlide(0)"></span>
+
+            <span class="dot" onclick="showSlide(1)"></span>
+
+            <span class="dot" onclick="showSlide(2)"></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     QUICK LINKS
+========================= -->
+
+    <div class="quick-links">
+
+        <div class="quick-container">
+
+            <a href="application.html" class="quick-item">
+                <div class="icon">🎓</div>
+                <strong>Admissions</strong>
+                <p> Appy now</p>
+            </a>
+
+            <a href="#academics" class="quick-item">
+                <div class="icon">📚</div>
+                <strong>Academics</strong>
+                <p>Classes & Subjects</p>
+            </a>
+
+            <a href="#downloads" class="quick-item">
+                <div class="icon">📄</div>
+                <strong>Downloads</strong>
+                <p>School Documents</p>
+            </a>
+
+            <a href="#contact" class="quick-item">
+                <div class="icon">☎️</div>
+                <strong>Contact Us</strong>
+                <p>Get in Touch</p>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+     ABOUT
+========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Our School</h2>
+
+            <div class="line"></div>
+
+            <p>Committed to quality education, discipline and academic excellence</p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img src="images/about.jpg" alt="About School">
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>Welcome to ujiji islamic Secondary School</h3>
+
+                <p>
+                    Our school is committed to providing quality
+                    education and professional training that prepares
+                    students for academic and career success on future national development.
+                </p>
+
+                <p>
+                    We provide a supportive better learning environment,
+                    qualified instructors and practical learning
+                    opportunities.also we privide.better maels and accomodation for 
+                    students in boarding life with considering moral ethics to students lifestyle for 
+                    better future
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     ACADEMICS
+========================= -->
+
+    <section id="academics" class="news-section">
+
+        <div class="section-title">
+
+            <h2>Classes & Academic Programmes</h2>
+
+            <div class="line"></div>
+
+            <p>Explore our primary and secondary classes, subjects and learning programmes</p>
+
+        </div>
+
+
+        <div class="news-container">
+
+            <div class="news-card">
+
+                <img src="images/program1.jpg" alt="Program">
+
+                <div class="news-content">
+
+                    <h3>Primary Education</h3>
+
+                    <p>we provide education for nursery and primary school education 
+                        at RAUF PRE AND PRIMARY SCHOOL, characterized with higher perfomannce Results
+                        adequate trained teachers, friendly infrastructure for learning supportive
+                        for students social, academical, and sports
+                        
+                    </p>
+
+                    <a href="#" class="read-more">
+                        View Classes →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <img src="images/program2.jpg" alt="Program">
+
+                <div class="news-content">
+
+                    <h3>Secondary Education</h3>
+
+                    <p>we have UJIJI ISLAMIC SECONDARY, for olevel studied progeorames from from one 
+                        up to form four, characterized with higher perfomannce in local and national
+                        examinations resultz, charactetized with friendly supportive enviromnent for learning
+                         <form action=""></form>
+                      
+
+                    </p>
+
+                    <a href="#" class="read-more">
+                        View Classes →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <img src="images/program3.jpg" alt="Program">
+
+                <div class="news-content">
+
+                    <h3>QT nad Private candidates educations</h3>
+
+                    <p>
+                        also we recieve the peivate candidates for form four repeat for studying
+                        and QT programes that means FORM 1-2 For one year and FORM3-4 For one year 
+                        welcome to ujiji islamic Secondary School
+                    </p>
+
+                    <a href="#" class="read-more"></a>
+                        View Classes →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     ADMISSION
+========================= -->
+
+    <section id="admission">
+
+        <div class="section-title">
+
+            <h2>School Admissions</h2>
+
+            <div class="line"></div>
+
+            <p>Give your child a strong foundation for a successful future</p>
+
+        </div>
+
+
+        <div style="max-width:900px;margin:auto;text-align:center;">
+
+            <h3 style="color:#063b70;font-size:28px;margin-bottom:15px;">
+                Applications Are Welcome
+            </h3>
+
+            <p style="color:#666;margin-bottom:25px;">
+                Prospective students can apply for available academic
+                programs by completing the admission process.
+            </p>
+
+            <a href="#" class="btn">
+                Apply for School Admission
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     NEWS
+========================= -->
+
+    <section id="news" class="news-section">
+
+        <div class="section-title">
+
+            <h2>Latest News & Updates</h2>
+
+            <div class="line"></div>
+
+            <p>Stay informed about school activities, examinations and announcements</p>
+
+        </div>
+
+
+        <div class="news-container">
+
+            <article class="news-card">
+
+                <img src="images/news1.jpg" alt="News">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        25 AUG 2026
+                    </span>
+
+                    <h3>
+                        School Admissions Open
+                    </h3>
+
+                    <p>
+                        Applications for the new academic year are
+                        now open. Interested students are encouraged
+                        to apply.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <img src="images/news2.jpg" alt="News">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        20 AUG 2026
+                    </span>
+
+                    <h3>
+                        Examination Timetable
+                    </h3>
+
+                    <p>
+                        Students can now access the latest examination
+                        timetable from the downloads section.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <img src="images/news3.jpg" alt="News">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        15 AUG 2026
+                    </span>
+
+                    <h3>
+                        School Community Event
+                    </h3>
+
+                    <p>
+                        Students and staff participated in an important
+                        academic and community development activity.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     NOTICE / LINKS
+========================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>News, Notices & Important Links</h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="updates-container">
+
+            <div class="notice-board">
+
+                <h3>📢 Notice Board</h3>
+
+
+                <div class="notice">
+
+                    <div class="notice-date">
+                        <strong>25</strong>
+                        AUG
+                    </div>
+
+                    <div>
+                        <h4>Pupil & Student Registration</h4>
+                        <p>
+                            Registration for continuing pupils and students is ongoing.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-date">
+                        <strong>22</strong>
+                        AUG
+                    </div>
+
+                    <div>
+                        <h4>Examination Announcement</h4>
+                        <p>
+                            Check the examination timetable before the examination period.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-date">
+                        <strong>18</strong>
+                        AUG
+                    </div>
+
+                    <div>
+                        <h4>Important Parents' Meeting</h4>
+                        <p>
+                            Parents and guardians are encouraged to attend the scheduled meeting.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="important-links">
+
+                <h3>🔗 Important Links</h3>
+
+                <a href="#">Parent & Student Portal →</a>
+
+                <a href="#admission">Online Admission →</a>
+
+                <a href="#">Examination Results →</a>
+
+                <a href="#">School Calendar →</a>
+
+                <a href="#">School Rules & Regulations →</a>
+
+                <a href="#contact">School Email →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     ATTACHMENTS
+========================= -->
+
+    <section class="attachments" id="downloads">
+
+        <div class="section-title">
+
+            <h2>School Downloads</h2>
+
+            <div class="line"></div>
+
+            <p>Download important school documents and forms</p>
+
+        </div>
+
+
+        <div class="attachment-container">
+
+            <div class="attachment">
+
+                <div class="file-icon">📕</div>
+
+                <div>
+                    <h4>School Prospectus 2026</h4>
+                    <p>PDF • 2.5 MB</p>
+                </div>
+
+                <a href="documents/prospectus.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+
+            <div class="attachment">
+
+                <div class="file-icon">📄</div>
+
+                <div>
+                    <h4>School Admission Form</h4>
+                    <p>PDF • 1.2 MB</p>
+                </div>
+
+                <a href="documents/admission-form.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+
+            <div class="attachment">
+
+                <div class="file-icon">📅</div>
+
+                <div>
+                    <h4>School Calendar</h4>
+                    <p>PDF • 850 KB</p>
+                </div>
+
+                <a href="documents/calendar.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+
+            <div class="attachment">
+
+                <div class="file-icon">📑</div>
+
+                <div>
+                    <h4>Examination Timetable</h4>
+                    <p>PDF • 700 KB</p>
+                </div>
+
+                <a href="documents/exam-timetable.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+
+            <div class="attachment">
+
+                <div class="file-icon">📋</div>
+
+                <div>
+                    <h4>Fee Structure</h4>
+                    <p>PDF • 600 KB</p>
+                </div>
+
+                <a href="documents/fee-structure.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+
+            <div class="attachment">
+
+                <div class="file-icon">📘</div>
+
+                <div>
+                    <h4>Parent & Student Handbook</h4>
+                    <p>PDF • 1.4 MB</p>
+                </div>
+
+                <a href="documents/student-handbook.pdf" class="download" download>
+                    ⬇
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CONTACT
+========================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <div class="line"></div>
+
+            <p>We are ready to assist you</p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <div class="contact-box">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>
+                            Tanzania
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <h4>Phone</h4>
+                        <p>
+                            +255 700 000 000
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>
+                            info@school.ac.tz
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <div class="contact-icon">🌐</div>
+
+                    <div>
+                        <h4>Website</h4>
+                        <p>
+                            www.school.ac.tz
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h3 style="color:#063b70;margin-bottom:20px;">
+                    Send Us a Message
+                </h3>
+
+                <form>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <button class="btn submit-btn" type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h3>UJIJI    ISLAMIC   SECONDARY   SCHOOL</h3>
+
+                <p>
+                    Welcome ujiji islamic secondary school 
+                    committed to quality education, professional
+                    development and student success.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#about">About Us</a>
+
+                <a href="#academics">Academics</a>
+
+                <a href="#admission">Admissions</a>
+
+                <a href="#news">News</a>
+
+                <a href="#downloads">Downloads</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Parent & Student Links</h3>
+
+                <a href="#">Parent & Student Portal</a>
+
+                <a href="#">Exam Results</a>
+
+                <a href="#">School Timetable</a>
+
+                <a href="#">School Calendar</a>
+
+                <a href="#">E-Learning</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>📍 Tanzania</p>
+
+                <p>☎ +255 700 000 000</p>
+
+                <p>✉ info@school.ac.tz</p>
+
+                <p>🌐 www.school.ac.tz</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 TRACDI Primary & Secondary School. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+     WHATSAPP
+========================= -->
+
+    <a href="https://wa.me/255700000000" class="whatsapp" target="_blank" title="Chat on WhatsApp">
+
+        ☎
+
+    </a>
+
+
+    <!-- =========================
+     JAVASCRIPT
+========================= -->
+
+    <script>
+
+        /* MOBILE MENU */
+
+        function toggleMenu() {
+
+            const navigation =
+                document.getElementById("navigation");
+
+            navigation.classList.toggle("show");
+
+        }
+
+
+        /* SLIDER */
+
+        let currentSlide = 0;
+
+        const slides =
+            document.querySelectorAll(".slide");
+
+        const dots =
+            document.querySelectorAll(".dot");
+
+
+        function showSlide(index) {
+
+            slides.forEach(slide => {
+                slide.classList.remove("active");
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove("active");
+            });
+
+            slides[index].classList.add("active");
+
+            dots[index].classList.add("active");
+
+            currentSlide = index;
+
+        }
+
+
+        function nextSlide() {
+
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide);
+
+        }
+
+
+        setInterval(nextSlide, 5000);
+
+
+        /* CLOSE MOBILE MENU AFTER CLICK */
+
+        document.querySelectorAll("nav a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navigation")
+                    .classList.remove("show");
+
+            });
+
+        });
+
+
+        /* CONTACT FORM */
+
+        document.querySelector("form").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            alert(
+                "Thank you! Your message has been received."
+            );
+
+            this.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
